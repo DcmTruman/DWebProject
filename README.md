@@ -23,3 +23,4 @@
 - 运行老师写好的环境部署脚本
 - 进入数据库容器执行数据库脚本(也可以设置entry point,否则access deny，且数据库无表)
 - 基于docker的php连接基于docker的mysql，使用PDO链接数据库
+- 利用ajax判断用户是否已注册https://www.cnblogs.com/mengshenshenchu/p/6849004.html
