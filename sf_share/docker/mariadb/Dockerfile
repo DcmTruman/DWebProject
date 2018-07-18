@@ -7,7 +7,7 @@ ENV MYSQL_DATABASE=acdemo \
 ADD db/0_create_usr.sql /docker-entrypoint-initdb.d
 ADD db/1_init_db.sql /docker-entrypoint-initdb.d
 
-VOLUME ["/var/lib/mysql"]
+VOLUME ["~/project/sf_share/var/lib/mysql"]
 
 EXPOSE 3306
 

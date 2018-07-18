@@ -6,6 +6,12 @@
 	
 	<body>
 <!- ================================================================= ->
+<?php
+//此处测试各类php文件
+require_once 'db.php';
+connect_database();
+
+?>
 		<div id = "login_form_div">
 			<h1>小灯网盘</h1>
 			<div>
