@@ -26,7 +26,7 @@ connect_database();
 				</div>
 				
 				<button type="submit" name="login">登录</button>
-				<a href="register.php" role="button">注册</a>
+				<a href="register_f.php" role="button">注册</a>
 			</div>
 		</div>
 
