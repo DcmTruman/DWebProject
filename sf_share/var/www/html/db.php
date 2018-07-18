@@ -31,7 +31,7 @@ function check_register($name){
 			$stmt->bindParam(':name', $name);//绑定参数
 			$stmt->execute();
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);//将对应结果集中的每一行作为一个列名索引数组返回
-			return isset($result['password']) ? $result['password'] : '';
+			return isset($result['password']) ? "NO": "OK";
 		} catch(PDOException $e) {
 			throw $e;
 		}	

@@ -16,7 +16,7 @@ session_start()
       <div>
         <div>
           <label for="i_username">用户名</label>
-          <input type="email" id="i_username" name="username" placeholder="请输入用户名" >
+          <input type="email" id="i_username" name="username" placeholder="请输入用户名" onblur="check_register_name()" oninput="check_register_name()" ><p class="help-block" id="uname_allow"></p>
         </div>
         <div id = "iPasswordDiv"> 
           <label for="iPassword">口令</label>
@@ -28,6 +28,32 @@ session_start()
 		  <p class="help-block" id="password2prompt"></p>
           <script language='javascript' type='text/javascript'>
           // FIXME Bad Coding Style
+
+	function check_register_name()
+	{
+	//	console.log("fuck");
+		var uname = $('#i_username').val();
+		$.ajax({
+			url:"register_d.php",
+			data:{u:uname},
+			type:"POST",
+			dataType:"TEXT",
+			success:function(data){
+				if(data.trim() == "OK")
+				{
+					$('#uname_allow').text("该用户名尚未注册");
+					$('#uname_allow').css("color","green");	
+				}
+				else
+				{
+					$('#uname_allow').text("该用户名已注册");
+					$('#uname_allow').css("color","red");	
+				}
+			}
+		
+		
+		});
+	}
     function checkRegister() {
 		//用于检测两次输入密码是否相同
         if ($('#iPassword').val() != $('#re-iPassword').val()) {
